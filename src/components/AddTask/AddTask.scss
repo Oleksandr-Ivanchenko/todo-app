@@ -1,16 +1,24 @@
+
+@use '../../styles/variables' as *;
+
+
+
+
 input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    margin-top: $margin;
 }
 
 .add-button {
+    margin: $margin;
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: $primary-color;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: $border-radius;
     cursor: pointer;
 }

@@ -1,18 +1,31 @@
-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    text-decoration: none;
-    color: #333;
+
+@use '../../styles/variables' as *;
+
+ul {
+  list-style: none;
+  padding: 0;
 }
+
+li {
+  max-width: 250px;          // або будь-яка ширина, що пасує твоєму макету    // не переносить текст
+  overflow: hidden;          // приховує зайве
+  text-overflow: ellipsis;   // додає "..."
+}
+
+
 
 .delete-button {
   all: unset;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: #dc3545;
-  color: white;
+  padding: 6px 12px;
+  border-radius: $border-radius;
+  background-color: $danger-color;
+  color: #fff;
   cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color $transition;
+  margin: 20px;
+
+  &:hover {
+    background-color: darken($danger-color, 10%);
+  }
 }

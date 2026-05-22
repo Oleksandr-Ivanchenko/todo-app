@@ -1,4 +1,36 @@
+@use '../../styles/variables' as *;
+
 .task-list {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid $border-color;
+    color: $text-color;
+    transition: background-color $transition;
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
+
+    .delete-button {
+      all: unset;
+      padding: 6px 12px;
+      border-radius: $border-radius;
+      background-color: $danger-color;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background-color $transition;
+
+      &:hover {
+        background-color: darken($danger-color, 10%);
+      }
+    }
+  }
 }

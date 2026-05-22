@@ -1,16 +1,22 @@
 
 
 // import { useTasks } from '../../hooks/useTasks';
-import { useContext, useState } from 'react';
+import { useContext, useState, useRef } from 'react';
 import TaskContext from '../../context/TaskContext';
 import './AddTask.scss';
+
 
 
 export default function AddTask( ) {
   // const {  setTasks, inputValue, setInputValue } ();
   const [inputValue, setInputValue] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const context = useContext(TaskContext);
+  
+  const focusInput = () => {
+    inputRef.current?.focus();
+  };
 
   if (!context) {
     throw new Error('AddTask must be used within a TaskContext.Provider');
@@ -19,12 +25,14 @@ export default function AddTask( ) {
   const { setTasks } = context;
 
   return (
-    <>
+    <div className='add-task'>
       <input 
         type="text" 
         placeholder="Enter task..." 
         value={inputValue} 
+        onFocus={focusInput}
         onChange={e => setInputValue(e.target.value)} 
+        ref={inputRef}
       />
       <button
         className='add-button'
@@ -44,6 +52,6 @@ export default function AddTask( ) {
         }}
         >Add Task
       </button>
-        </>
+    </div>
   )
 }
