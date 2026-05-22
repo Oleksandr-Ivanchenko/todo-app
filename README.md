@@ -1,27 +1,26 @@
-Todo List App
-A simple todo list application built with React and TypeScript.
-Features
+# Todo App
 
-Add tasks
-Mark tasks as completed
-Delete individual tasks
-Data persists after page reload (localStorage)
+A todo application built to practice React architecture patterns.
 
-Tech Stack
+## Features
+- Add, delete, toggle tasks
+- Persistent storage via localStorage
+- Auto-focus on input on load
 
-React 18
-TypeScript
-Vite
-CSS
+## Tech Stack
+- React 18 + TypeScript
+- Context API — global state without Redux
+- useCallback + useMemo — render optimization
+- useRef — DOM access
+- SCSS with variables
+- Vite
 
-Getting Started
-bashnpm install
+## Architecture
+- Component separation: AddTask, TaskList, TaskItem
+- Custom hook useTasks
+- Centralized types in src/types
+- Context with TypeScript interface
+
+## Getting Started
+npm install
 npm run dev
-What I Learned
-
-useState — managing component state
-useEffect — syncing state with localStorage
-Controlled inputs
-Immutable array updates with filter and map
-Event bubbling and stopPropagation
-Lazy initializer in useState
